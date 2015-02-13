@@ -1,0 +1,108 @@
+<div ng-repeat="selection in mySelections">
+
+  <form novalidate ng-submit="submit()" class="form-horizontal" name="item">
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">itemID</label>
+      <div class="col-sm-10">
+        <p class="form-control-static">{{selection.itemID}}</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">title</label>
+      <div class="col-sm-8">
+        <input required type="text" class="form-control" value="{{selection.title}}" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">buyItNowPrice</label>
+      <div class="col-sm-1">
+        <input required type="text" class="form-control" value="{{selection.buyItNowPrice}}" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">currentPrice</label>
+      <div class="col-sm-1">
+        <input required type="text" class="form-control" value="{{selection.currentPrice}}" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">listingDuration</label>
+      <div class="col-sm-2">
+        <input required type="text" class="form-control" value="{{selection.listingDuration}}" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">listingType</label>
+      <div class="col-sm-2">
+        <input required type="text" class="form-control" value="{{selection.listingType}}" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">stockControl</label>
+      <div class="col-sm-1">
+        <input required type="text" class="form-control" value="{{selection.stockControl}}" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">galleryURL</label>
+      <div class="col-sm-6">
+        <img src="{{selection.galleryURL}}" class="img-responsive"></img>
+        <!--         <input required type="text" class="form-control" value="{{selection.galleryURL}}"/> -->
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">quantityAvailable</label>
+      <div class="col-sm-1">
+        <input required type="text" class="form-control" value="{{selection.quantityAvailable}}" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">status</label>
+      <div class="col-sm-1">
+        <input required type="number" class="form-control" value="{{selection.status}}" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label"></label>
+      <div class="col-sm-10">
+        <button ng-disabled="item.$invalid" class="btn btn-primary" type="submit">Save Item</button>
+      </div>
+    </div>
+
+  </form>
+
+</div>
+
+<form ng-hide="true" novalidate class="simple-form">
+  Name:
+  <input type="text" ng-model="user.name" />
+  <br /> E-mail:
+  <input type="email" ng-model="user.email" />
+  <br /> Gender:
+  <input type="radio" ng-model="user.gender" value="male" />male
+  <input type="radio" ng-model="user.gender" value="female" />female
+  <br />
+  <input type="button" ng-click="reset()" value="Reset" />
+  <input type="submit" ng-click="update(user)" value="Save" />
+  <pre>form = {{user | json}}</pre>
+  <pre>master = {{master | json}}</pre>
+</form>
+
+
+<div class="testing" ng-hide="true">
+  <a ui-sref="manage.item.price">click for manage-price</a>
+  <a ui-sref="manage.item.quantity">click for manage-quantity</a>
+</div>
+
+<div ui-view></div>
