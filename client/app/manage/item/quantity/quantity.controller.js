@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('listingManagerApp')
-  .controller('ManageQuantityCtrl', function ($scope, $state, myItem) {
+  .controller('ManageItemQuantityCtrl', function ($scope, $state, myItem) {
 
     // this should at first be set to the current quantity or null.
     // disabled if 0. there should be a button for sending stock out.

@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('listingManagerApp')
-  .controller('ManageEndCtrl', function ($scope, $state, myItem) {
+  .controller('ManageItemEndCtrl', function ($scope, $state, myItem) {
 
     $scope.item = myItem;
 
 
-  
+
   });

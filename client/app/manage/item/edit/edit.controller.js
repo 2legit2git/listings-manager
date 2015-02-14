@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('listingManagerApp')
-  .controller('ManageEditCtrl', function ($scope, $state, myItem) {
+  .controller('ManageItemEditCtrl', function ($scope, $state, myItem) {
 
     $scope.item = myItem;
 
