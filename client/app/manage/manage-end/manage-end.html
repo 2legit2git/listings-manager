@@ -1,0 +1,22 @@
+<h2>End Item</h2>
+
+<div class="container padded">
+
+  <form class="form-horizontal">
+
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Are you sure you want to end the listing?</label>
+      <div class="col-sm-2">
+        <input type="checkbox" ng-model="checked" >
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-2">
+        <button ng-disabled="!checked" class="btn btn-danger" type="submit">End Item</button>
+      </div>
+    </div>
+
+  </form>
+
+</div>

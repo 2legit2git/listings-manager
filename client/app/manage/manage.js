@@ -35,6 +35,18 @@ angular.module('listingManagerApp')
         templateUrl: 'app/manage/manage-price/manage-price.html',
         controller: 'ManagePriceCtrl',
       })
+      .state('manage.item.edit', {
+        // make default id
+        url: '/edit',
+        templateUrl: 'app/manage/manage-edit/manage-edit.html',
+        controller: 'ManageEditCtrl',
+      })
+      .state('manage.item.end', {
+        // make default id
+        url: '/end',
+        templateUrl: 'app/manage/manage-end/manage-end.html',
+        controller: 'ManageEndCtrl',
+      })
       .state('manage.item.quantity', {
         url: '/quantity',
         templateUrl: 'app/manage/manage-quantity/manage-quantity.html',

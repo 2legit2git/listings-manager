@@ -1,11 +1,19 @@
 <navbar/>
 
 <div class="container">
-  This is the manage view.
+  <a class="btn btn-primary btn-block" ng-click="showGrid = !showGrid">Toggle Grid</a>
+  </br>
+  <div collapse="showGrid">
+    <strong>Filter:  </strong>
+    <div class="input-group">
+      
+      <input class="col-sm-10" type="text" ng-model="filterOptions.filterText" />
+      
+    </div>
+    </br>
+    <div class="gridStyle" ng-grid="gridOptions">
+    </div>
 
-
-  <div class="gridStyle" ng-grid="gridOptions"></div>
-
-
+  </div>
   <div ui-view=""></div>
 </div>

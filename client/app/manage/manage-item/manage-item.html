@@ -1,89 +1,39 @@
+<div> manage.item state </div>
 <div ng-repeat="selection in mySelections">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="well well-sm">
+        <div class="row">
+          <div class="col-xs-2 col-md-2 text-center">
+            <img src="{{selection.galleryURL}}" width="100%" height="100%" class="img-rounded img-responsive" />
+          </div>
+          <div class="col-xs-10 col-md-10 section-box">
+            <h4>
+                            {{selection.title}} <a href="{{selection.viewItemURL}}" alt="view listing" target="_blank"><span class="glyphicon glyphicon-new-window">
+                            </span></a>
+                        </h4>
+            <p>
+              <a ui-sref="manage.item.edit({id: selection.itemID})" class="btn btn-default" title="edit"><b>Edit Listing</b>
+                <span class="glyphicon glyphicon-pencil"></a>
+              <a class="btn btn-info" title="view stats"><b>View Statistics</b>
+                <span class="glyphicon glyphicon-stats"></a>
+              <a ui-sref="manage.item.quantity({id: selection.itemID})" class="btn btn-primary" title="modify inventory"><b>Modify Quantities</b>
+                <span class="glyphicon glyphicon-th"></a>
+              <a ui-sref="manage.item.price({id: selection.itemID})" class="btn btn-success" title="modify price"><b>Manage Pricing</b>
+                <span class="glyphicon glyphicon-usd"></a>
+              <a class="btn btn-warning" title="modify pictures"><b>Manage Pictures</b>
+                <span class="glyphicon glyphicon-picture"></a>
+              <a ui-sref="manage.item.end({id: selection.itemID})" class="btn btn-danger" title="delete/end"><b>End Listing</b>
+                <span class="glyphicon glyphicon-remove"></span></a>
 
-  <form novalidate ng-submit="submit()" class="form-horizontal" name="item">
-
-    <div class="form-group">
-      <label class="col-sm-2 control-label">itemID</label>
-      <div class="col-sm-10">
-        <p class="form-control-static">{{selection.itemID}}</p>
+            </p>
+            <hr />
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="form-group">
-      <label class="col-sm-2 control-label">title</label>
-      <div class="col-sm-8">
-        <input required type="text" class="form-control" value="{{selection.title}}" />
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-sm-2 control-label">buyItNowPrice</label>
-      <div class="col-sm-1">
-        <input required type="text" class="form-control" value="{{selection.buyItNowPrice}}" />
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-sm-2 control-label">currentPrice</label>
-      <div class="col-sm-1">
-        <input required type="text" class="form-control" value="{{selection.currentPrice}}" />
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-sm-2 control-label">listingDuration</label>
-      <div class="col-sm-2">
-        <input required type="text" class="form-control" value="{{selection.listingDuration}}" />
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-sm-2 control-label">listingType</label>
-      <div class="col-sm-2">
-        <input required type="text" class="form-control" value="{{selection.listingType}}" />
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-sm-2 control-label">stockControl</label>
-      <div class="col-sm-1">
-        <input required type="text" class="form-control" value="{{selection.stockControl}}" />
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-sm-2 control-label">galleryURL</label>
-      <div class="col-sm-6">
-        <img src="{{selection.galleryURL}}" class="img-responsive"></img>
-        <!--         <input required type="text" class="form-control" value="{{selection.galleryURL}}"/> -->
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-sm-2 control-label">quantityAvailable</label>
-      <div class="col-sm-1">
-        <input required type="text" class="form-control" value="{{selection.quantityAvailable}}" />
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-sm-2 control-label">status</label>
-      <div class="col-sm-1">
-        <input required type="number" class="form-control" value="{{selection.status}}" />
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-sm-2 control-label"></label>
-      <div class="col-sm-10">
-        <button ng-disabled="item.$invalid" class="btn btn-primary" type="submit">Save Item</button>
-      </div>
-    </div>
-
-  </form>
-
+  </div>
 </div>
-
 <form ng-hide="true" novalidate class="simple-form">
   Name:
   <input type="text" ng-model="user.name" />
