@@ -2,7 +2,7 @@
 
 angular.module('listingManagerApp')
   .controller('LoginCtrl', function ($scope, Auth, $location, $window) {
-    $scope.user = {};
+    $scope.user = {email: 'admin@admin.com', password:'adminadmin'};
     $scope.errors = {};
 
     $scope.login = function(form) {
@@ -15,7 +15,7 @@ angular.module('listingManagerApp')
         })
         .then( function() {
           // Logged in, redirect to home
-          $location.path('/');
+          $location.path('/manage');
         })
         .catch( function(err) {
           $scope.errors.other = err.message;

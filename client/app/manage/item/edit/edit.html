@@ -1,100 +1,103 @@
 <h2>Edit Listing</h2>
 <div class="container padded">
-  <div ng-repeat="selection in mySelections">
 
-    <form novalidate ng-submit="submit()" class="form-horizontal" name="item">
-
-      <div class="form-group">
-        <label class="col-sm-2 control-label">itemID</label>
-        <div class="col-sm-10">
-          <p class="form-control-static">{{selection.itemID}}</p>
-        </div>
-      </div>
-
-
-      <div class="form-group">
-        <label class="col-sm-2 control-label">title</label>
-        <div class="col-sm-8">
-          <div class="input-group">
-            <input ng-trim="false" required type="text" class="form-control" ng-model="selection.title" />
-            <span class="input-group-addon">{{ 80 - selection.title.length }}</span>
-          </div>
-        </div>
-      </div>
-
-
-
-      <div class="form-group">
-        <label class="col-sm-2 control-label">buyItNowPrice</label>
-        <div class="col-sm-1">
-          <input required type="text" class="form-control" ng-model="selection.buyItNowPrice" />
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-sm-2 control-label">currentPrice</label>
-        <div class="col-sm-1">
-          <input required type="text" class="form-control" ng-model="selection.currentPrice" />
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-sm-2 control-label">listingDuration</label>
-        <div class="col-sm-2">
-          <input required type="text" class="form-control" ng-model="selection.listingDuration" />
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-sm-2 control-label">listingType</label>
-        <div class="col-sm-2">
-          <input required type="text" class="form-control" ng-model="selection.listingType" />
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-sm-2 control-label">stockControl</label>
-        <div class="col-sm-1">
-          <input required type="text" class="form-control" ng-model="selection.stockControl" />
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-sm-2 control-label">galleryURL</label>
-        <div class="col-sm-6">
-          <input required type="text" class="form-control" ng-model="selection.galleryURL" />
-          <!--         <input required type="text" class="form-control" value="{{selection.galleryURL}}"/> -->
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-sm-2 control-label">quantityAvailable</label>
-        <div class="col-sm-1">
-          <input required type="text" class="form-control" ng-model="selection.quantityAvailable" />
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-sm-2 control-label">status</label>
-        <div class="col-sm-1">
-          <input required type="number" class="form-control" ng-model="selection.status" />
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-sm-2 control-label"></label>
-        <div class="col-sm-10">
-          <button ng-disabled="item.$invalid" class="btn btn-primary" type="button">Save Changes</button>
-        </div>
-      </div>
-  <input type="button" ng-click="reset()" value="Reset" />
-  <input type="submit" ng-click="update(selection)" value="Save" />
-
-  <pre>form = {{selection | json}}</pre>
-  <pre>master = {{master | json}}</pre>
-    </form>
-
+  <div class="row">
+    <div class="col-sm-3"><textarea type="text"></textarea></div>
+    <div class="col-sm-9">
   </div>
+  <form novalidate ng-submit="submit()" class="form-horizontal">
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">itemID</label>
+      <div class="col-sm-10">
+        <p class="form-control-static">{{item.itemID}}</p>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">title</label>
+      <div class="col-sm-8">
+        <div class="input-group">
+          <input ng-trim="false" required type="text" class="form-control" ng-model="item.title" />
+          <span class="input-group-addon">{{ 80 - item.title.length }}</span>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">buyItNowPrice</label>
+      <div class="col-sm-1">
+        <input required type="text" class="form-control" ng-model="item.buyItNowPrice" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">currentPrice</label>
+      <div class="col-sm-1">
+        <input required type="text" class="form-control" ng-model="item.currentPrice" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">listingDuration</label>
+      <div class="col-sm-2">
+        <input required type="text" class="form-control" ng-model="item.listingDuration" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">listingType</label>
+      <div class="col-sm-2">
+        <input required type="text" class="form-control" ng-model="item.listingType" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">stockControl</label>
+      <div class="col-sm-1">
+        <input required type="text" class="form-control" ng-model="item.stockControl" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">galleryURL</label>
+      <div class="col-sm-6">
+        <input required type="text" class="form-control" ng-model="item.galleryURL" />
+        <!--         <input required type="text" class="form-control" value="{{selection.galleryURL}}"/> -->
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">quantityAvailable</label>
+      <div class="col-sm-1">
+        <input required type="text" class="form-control" ng-model="item.quantityAvailable" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">status</label>
+      <div class="col-sm-1">
+        <input required class="form-control" ng-model="item.status" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label"></label>
+      <div class="col-sm-10">
+        <button ng-disabled="item.$invalid" class="btn btn-primary" type="button">Save Changes</button>
+      </div>
+    </div>
+    <input type="button" ng-click="reset()" value="Reset" />
+    <input type="submit" ng-click="update(item)" value="Save" />
+
+    <pre>form = {{selection | json}}</pre>
+    <pre>master = {{master | json}}</pre>
+  </form>
+
+
 </div>
 
 

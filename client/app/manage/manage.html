@@ -2,6 +2,8 @@
 
 <div class="container">
   <a class="btn btn-primary btn-block" ng-click="showGrid = !showGrid">Toggle Grid</a>
+
+ <!--  <a class="btn btn-success" ng-click="getItems()">get items</a> -->
   </br>
   <div collapse="showGrid">
     <strong>Filter:  </strong>
@@ -15,5 +17,5 @@
     </div>
 
   </div>
-  <div ui-view=""></div>
+  <div ui-view="" autoscroll="true"></div>
 </div>

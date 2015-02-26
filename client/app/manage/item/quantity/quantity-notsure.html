@@ -1,0 +1,427 @@
+<section class="productView">
+
+  <div class="container">
+    
+    <div class="row">
+      
+      <!-- Products Current Panel -->
+
+      <div class="col-md-9">
+        
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">product detail stuff</h3>
+          </div>
+          <div class="panel-body">
+          
+            <form class="form-horizontal" role="form" action="" method="POST">
+              <input type="hidden" name="productId" value="">
+              <input type="hidden" name="categoryId" value="">
+                    
+              <div class="form-group">
+                <div class="col-sm-5">
+                  <h4>Product Basics</h4>
+                </div>
+              </div>
+              
+
+                <div class="form-group" id="panel" style="display:none;">
+                  <label class="col-sm-3 control-label">Panel</label>
+                  <div class="col-sm-4" id="panelCheckboxDiv">
+                    <input disabled type="checkbox" id="panelCheckbox" name="currentPanel" value="1">
+                  </div>
+                  <div class="col-sm-5" id="panelCheckboxDiv">
+                    <input type="checkbox" id="panelCheckbox" name="panel" value="1">
+                  </div>
+                </div>
+              
+              
+              <div class="form-group ">
+                <label class="col-sm-3 control-label">SKU</label>
+                <div class="col-sm-4">
+                  <input disabled type="text" class="form-control" id="sku" name="currentSku" value="" placeholder="SKU">
+                </div>
+                <div class="col-sm-5">
+                  <input type="hidden" name="currentSku" value="">
+                  <input type="text" class="form-control" id="sku" name="sku" value="" placeholder="SKU">
+                </div>
+              </div>
+              
+              <div class="form-group ">
+                <label class="col-sm-3 control-label">UPC</label>
+                <div class="col-sm-4">
+                  <input disabled type="text" class="form-control" id="upc" name="currentUpc" value="" placeholder="UPC">
+                </div>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" id="upc" name="upc" value="" placeholder="UPC">
+                </div>
+              </div>
+              
+              <div class="form-group ">
+                <label class="col-sm-3 control-label">Weight (Oz)</label>
+                <div class="col-sm-4">
+                  <input disabled type="text" class="form-control" id="weight" name="currentWeight" value="" placeholder="Weight (Oz)">
+                </div>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" id="weight" name="weight" value="" placeholder="Weight (Oz)">
+                </div>
+              </div>
+              
+              <div class="form-group ">
+                <label class="col-sm-3 control-label">Cost</label>
+                <div class="col-sm-4">
+                  <input disabled type="text" class="form-control" id="cost" name="currentCost" value="" placeholder="Cost">
+                </div>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" id="cost" name="cost" value="" placeholder="Cost">
+                </div>
+              </div>
+              
+              
+              <div class="form-group ">
+                <label class="col-sm-3 control-label">Material</label>
+                <div class="col-sm-4">
+                  <select disabled class="form-control" name="currentMaterialId">
+                    <option>Select a Material</option>
+                    
+                    
+                      <option selected value=""></option>
+                    
+                   
+                    
+                      <option selected value=""></option>
+                    
+
+                    
+                  </select>
+                </div>
+                <div class="col-sm-5">
+                  <select class="form-control" name="materialId">
+                    <option>Select a Material</option>
+                    
+                    
+
+                    
+                      <option selected value=""></option>
+                    
+                    
+                    
+                      <option selected value=""></option>
+                    
+                    
+                    
+                  </select>
+                </div>
+              </div>
+              
+              
+
+                <div class="form-group ">
+                  <label class="col-sm-3 control-label">Theme</label>
+                  <div class="col-sm-4">
+                    <select disabled class="form-control" name="currentThemeId">
+                      <option>Select a Theme</option>
+                      
+                      
+
+                      
+                        <option selected value=""></option>
+                      
+                      
+                      
+                        <option selected value=""></option>
+                      
+                      
+                      
+                    </select>
+                  </div>
+                  <div class="col-sm-5">
+                    <select class="form-control" name="themeId">
+                      <option>Select a Theme</option>
+                      
+                      
+
+                      
+                        <option selected value=""></option>
+                      
+                      
+                      
+                        <option selected value=""></option>
+                      
+                      
+                      
+                    </select>
+                  </div>
+                </div>
+              
+              
+              
+              
+              
+                <hr />
+                
+                <div class="form-group">
+                  <div class="col-sm-5">
+                    <h4>Precuts Information</h4>
+                  </div>
+                </div>  
+                
+                <div class="form-group ">
+                  <label class="col-sm-3 control-label">Total Count</label>
+                  <div class="col-sm-4">
+                    <input disabled type="text" class="form-control" id="totalCount" name="currentTotalCount" value="" placeholder="Total Count">
+                  </div>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="totalCount" name="totalCount" value="" placeholder="Total Count">
+                  </div>
+                </div>
+                
+                <div class="form-group ">
+                  <label class="col-sm-3 control-label">Different Fabrics</label>
+                  <div class="col-sm-4">
+                    <input disabled type="text" class="form-control" id="diffFabrics" name="currentDiffFabrics" value="" placeholder="Cost">
+                  </div>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="diffFabrics" name="diffFabrics" value="" placeholder="Cost">
+                  </div>
+                </div>
+              
+              
+              
+              
+              
+              
+                <hr />
+                
+                <div class="form-group">
+                  <div class="col-sm-5">
+                    <h4>Yardage Information</h4>
+                  </div>
+                </div>  
+                
+                <div class="form-group ">
+                  <label class="col-sm-3 control-label">Print (Second Word)</label>
+                  <div class="col-sm-4">
+                    <input disabled type="text" class="form-control" id="yardagePrint" value="" name="currentYardagePrint" placeholder="Print (Second Word)">
+                  </div>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="yardagePrint" name="yardagePrint" value="" placeholder="Print (Second Word)">
+                  </div>
+                </div>
+                
+                
+                <div class="form-group ">
+                  <label class="col-sm-3 control-label">Color (Third Word)</label>
+                  <div class="col-sm-4">
+                    <input disabled type="text" class="form-control" id="yardageColor" name="currentYardageColor" value="" placeholder="Color (Third Word)">
+                  </div>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="yardageColor" name="yardageColor" value="" placeholder="Color (Third Word)">
+                  </div>
+                </div>
+                
+                
+                <div class="form-group ">
+                  <label class="col-sm-3 control-label">Color Family</label>
+                  <div class="col-sm-4">
+                    <select disabled class="form-control" name="currentColorFamilyId">
+                      <option>Select a Color Family</option>
+                      
+                      
+
+                      
+                        <option selected value=""></option>
+                      
+                      
+                      
+                        <option selected value=""></option>
+                      
+                      
+                      
+                    </select>
+                  </div>
+                  <div class="col-sm-5">
+                    <select class="form-control" name="colorFamilyId">
+                      <option>Select a Color Family</option>
+                      
+                      
+
+                      
+                        <option selected value=""></option>
+                      
+                      
+                      
+                        <option selected value=""></option>
+                      
+                      
+                      
+                      
+                    </select>
+                  </div>
+                </div>
+                  
+                <div class="form-group ">
+                  <label class="col-sm-3 control-label">Fabric Pattern</label>
+                  <div class="col-sm-4">
+                    <select disabled class="form-control" name="currentFabricPatternId">
+                      <option>Select a Fabric Pattern</option>
+                      
+                      
+
+                      
+                        <option selected value=""></option>
+                      
+                      
+                      
+                        <option selected value=""></option>
+                      
+                      
+                      
+                    </select>
+                  </div>
+                  <div class="col-sm-5">
+                    <select class="form-control" name="fabricPatternId">
+                      <option>Select a Fabric Pattern</option>
+                      
+                      
+
+                      
+                        <option selected value=""></option>
+                      
+                      
+                      
+                        <option selected value=""></option>
+                      
+                      
+                      
+                    </select>
+                  </div>
+                </div>
+                
+              
+              
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <button type="submit" class="btn btn-default pull-right">Update</button>
+                </div>
+              </div>
+                
+            </div>
+          </div>
+        </form>
+      
+      </div> <!-- end .col-md-9 --> 
+      
+      
+      
+      <!-- Products Update Panel -->
+      
+      
+      <div class="col-md-3">
+            
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Product Images</h3>
+          </div>
+          <div class="panel-body" id="productImages">
+            
+            <table class="table">
+              
+              
+              
+                <tr>
+                  <td>
+                    <div class="lineImageLeft">
+                      <form enctype="multipart/form-data" action="" method="POST">
+                        <label>Collage (Logo)</label><br>
+                        <input type="hidden" name="imageType" value="productImg">
+                        <input type="hidden" name="productId" value="">
+                        <input type="hidden" name="sku" value="">
+                        <input type="hidden" name="lineName" value="">
+                        <input type="hidden" name="categoryId" value="">
+
+                          <a class="expandImage" href="">
+                            <!-- The time variable is to make the new image load, not the cached one -->
+                            <img src="" class="img-thumbnail" />
+                          </a>
+
+
+                        <br>                  
+                        <input name="uploadedfile" id="imgInput" type="file"/>
+                        <input type="submit" name="submit" value="Submit" class="btn btn-default" />
+                      </form>
+                    </div>
+                  </td>
+                </tr>
+              
+              
+              
+              <tr>
+                <td>
+                  <div class="lineImageLeft">
+                    <form enctype="multipart/form-data" action="" method="POST">
+                      <label>Collage (Logo)</label><br>
+                      <input type="hidden" name="imageType" value="productNoLogo">
+                      <input type="hidden" name="productId" value="">
+                      <input type="hidden" name="sku" value="">
+                      <input type="hidden" name="lineName" value="">
+                      <input type="hidden" name="categoryId" value="">
+
+
+                        <img src="" class="img-thumbnail" />
+
+                      <br>                  
+                      <input name="uploadedfile" id="imgInput" type="file"/>
+                      <input type="submit" name="submit" value="Submit" class="btn btn-default" />
+                    </form>
+                  </div>
+                </td>
+              </tr>
+              
+              
+              
+                <tr>
+                  <td>
+                    <div class="lineImageLeft">
+                      <form enctype="multipart/form-data" action="" method="POST">
+                        <label>Collage (Logo)</label><br>
+                        <input type="hidden" name="imageType" value="productWatermark">
+                        <input type="hidden" name="productId" value="">
+                        <input type="hidden" name="sku" value="">
+                        <input type="hidden" name="lineName" value="">
+                        <input type="hidden" name="categoryId" value="">
+
+
+                          <img src="" class="img-thumbnail" />
+
+                        <br>                  
+                        <input name="uploadedfile" id="imgInput" type="file"/>
+                        <input type="submit" name="submit" value="Submit" class="btn btn-default" />
+                      </form>
+                    </div>
+                  </td>
+                </tr>
+              
+              
+              
+            </table>
+                        
+          </div>
+          
+        </div> <!-- end .panel -->
+      
+      </div> <!-- end .col-md-9 -->
+        
+        
+        
+        
+      
+      
+      
+      
+    </div> <!-- end .row -->
+    
+    
+  </div> <!-- end .container -->
+
+</section>
