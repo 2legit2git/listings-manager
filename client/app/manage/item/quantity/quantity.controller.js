@@ -11,7 +11,7 @@ angular.module('listingManagerApp')
     $scope.newQuantity = parseInt($scope.item.quantityAvailable);
 
      $scope.setQuantity = function() {
-      $http.post('http://replaceyourdomain.com/siliconehose/editQuantity.php', {
+      $http.post('http://nxs.us.to/siliconehose/editQuantity.php', {
         itemID: $scope.item.itemID,
         quantity: $scope.newQuantity
       }).

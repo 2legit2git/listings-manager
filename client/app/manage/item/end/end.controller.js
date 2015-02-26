@@ -8,7 +8,7 @@ angular.module('listingManagerApp')
     $scope.item = myItem.items[0];
 
     $scope.endItem = function() {
-      $http.post('http://replaceyourdomain.com/siliconehose/endItemTest.php', {
+      $http.post('http://nxs.us.to/siliconehose/endItemTest.php', {
         itemID: $scope.item.itemID
       }).
       success(function(data, status, header, config) {
@@ -36,7 +36,7 @@ angular.module('listingManagerApp')
     }
 
     $scope.getItems = function() {
-      $http.get('http://replaceyourdomain.com/siliconehose/functions/jsonTest.php').
+      $http.get('http://nxs.us.to/siliconehose/functions/jsonTest.php').
       success(function(data, status, header, config) {
         console.log('y');
         console.log(JSON.stringify(data));

@@ -11,7 +11,7 @@ $scope.item = myItem.items[0];
 
 
         // $http({
-        //     url: "http://replaceyourdomain.com/siliconehose/functions/jsonTest6.php",
+        //     url: "http://replacedomain.com/siliconehose/functions/jsonTest6.php",
         //     method: "GET",
         //     params:  {
         //     itemID: $stateParams.id

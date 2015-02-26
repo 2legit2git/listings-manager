@@ -29,14 +29,14 @@ angular.module('listingManagerApp')
         //         var data;
         //         if (searchText) {
         //             var ft = searchText.toLowerCase();
-        //             $http.get('http://replaceyourdomain.com/siliconehose/functions/jsonTest.php').success(function(largeLoad) {
+        //             $http.get('http://replacedomain.com/siliconehose/functions/jsonTest.php').success(function(largeLoad) {
         //                 data = largeLoad.filter(function(item) {
         //                     return JSON.stringify(item).toLowerCase().indexOf(ft) != -1;
         //                 });
         //                 $scope.setPagingData(data, page, pageSize);
         //             });
         //         } else {
-        //             $http.get('http://replaceyourdomain.com/siliconehose/functions/jsonTest.php').success(function(largeLoad) {
+        //             $http.get('http://replacedomain.com/siliconehose/functions/jsonTest.php').success(function(largeLoad) {
         //                 $scope.setPagingData(largeLoad, page, pageSize);
         //             });
         //         }
@@ -64,7 +64,7 @@ angular.module('listingManagerApp')
 
 
         // /*     $scope.getItems = function() {
-        //       $http.get('http://replaceyourdomain.com/siliconehose/functions/jsonTest.php').
+        //       $http.get('http://replacedomain.com/siliconehose/functions/jsonTest.php').
         //       success(function(data, status, header, config) {
         //         $state.current.data.myData = $scope.myData = $scope.items = data;
 
@@ -264,7 +264,7 @@ angular.module('listingManagerApp')
 
 
                 // $http({
-                //     url: "http://replaceyourdomain.com/siliconehose/functions/resourceJson.php",
+                //     url: "http://replacedomain.com/siliconehose/functions/resourceJson.php",
                 //     method: "GET",
                 //     params: p
                 // }).success(function(data, status, headers, config) {
