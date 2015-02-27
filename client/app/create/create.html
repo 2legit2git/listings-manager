@@ -2,318 +2,382 @@
 
 <div class="container padded">
 
-    <form class="form-horizontal" role="form" action="" method="POST">
+  <div ng-hide="debug" ng-form="myForm" class="form-horizontal" role="form" name="myForm" action="" method="POST">
 
-        <input type="hidden" name="lineId" value="">
-        <input type="hidden" name="categoryId" value="">
-
-        <div class="row">
+    <div class="row">
 
 
 
-            <div class="col-md-12">
+      <div class="col-md-12">
 
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Add Listing</h3>
-                    </div>
-                    <div class="panel-body">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Create a new listing</h3>
+          </div>
+          <div class="panel-body">
 
-                        <div class="form-group">
-                            <div class="col-sm-5">
-                                <h4>Product Basics</h4>
-                            </div>
-                        </div>
+            <div class="form-group">
+              <div class="col-sm-5">
+                <h4>Standard Information</h4>
+              </div>
+            </div>
 
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Common Product Types</label>
+              <div class="col-sm-9">
+                <select class="form-control" name="typeId" id="typeId">
+                  <option>Select a Product Type</option>
+                  <option value="boostControllers">Boost Controller</option>
+                  <option value="siliconeHose">Silicone Hose</option>
 
-
-
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Product Type</label>
-                            <div class="col-sm-9">
-                                <select class="form-control" name="typeId" id="typeId">
-                                    <option>Select a Product Type</option>
-
-
-
-                                    <option value="hasError"></option>
-
-                                </select>
-                            </div>
-                        </div>
+                </select>
+              </div>
+            </div>
 
 
-                        <input type="hidden" name="typeId" value="10" />
+            <div class="form-group" ng-class="{'has-error': myForm.title.$error.maxlength}">
+              <label class="col-sm-3 control-label">Title</label>
+              <div class="col-sm-8">
+                <div class="input-group">
+                  <input ng-trim="false" required type="text" class="form-control" name="title" ng-model="item.title" ng-maxlength="80" />
+                  <span class="input-group-addon">{{ 80  - myForm.title.$viewValue.length}}</span>
 
-
-
-                        <div class="form-group" id="panel" style="display:none;">
-                            <label class="col-sm-3 control-label">Panel</label>
-                            <div class="col-sm-9" id="panelCheckboxDiv">
-                                <input type="checkbox" id="panelCheckbox" name="panel" value="1">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">SKU</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="sku" name="sku" placeholder="SKU">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">UPC</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="upc" name="upc" placeholder="UPC">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Weight (Oz)</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="weight" name="weight" placeholder="Weight (Oz)">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Cost</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="cost" name="cost" placeholder="Cost">
-                            </div>
-                        </div>
-
-
-
-                        <hr />
-
-                        <div class="form-group">
-                            <div class="col-sm-5">
-                                <h4>Pricing Information</h4>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Cost</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="totalCount" name="totalCount" placeholder="Cost">
-                            </div>
-                        </div>
-
-
-                        <hr />
-
-                        <div class="form-group">
-                            <div class="col-sm-5">
-                                <h4>Shipping Information</h4>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Cost</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="yardagePrint" name="yardagePrint" placeholder="Cost">
-                            </div>
-                        </div>
-
-
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Color (Third Word)</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="yardageColor" name="yardageColor" placeholder="Cost">
-                            </div>
-                        </div>
-
-
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Color Family</label>
-                            <div class="col-sm-9">
-                                <select class="form-control" name="colorFamilyId">
-                                    <option>Select a Color Family</option>
-
-
-
-                                    <option value="Cost">Cost</option>
-
-
-
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Shipping</label>
-                            <div class="col-sm-9">
-                                <select class="form-control" name="fabricPatternId">
-                                    <option>Select a shipping group</option>
-
-
-
-                                    <option value="Cost">Cost</option>
-
-
-
-                                </select>
-                            </div>
-                        </div>
-
-
-                        <div class="form-group">
-                            <div class="col-sm-12">
-                                <button type="submit" class="btn btn-default pull-right">Update</button>
-                            </div>
-                        </div>
-
-                    </div>
                 </div>
+              </div>
+              <div class="col-sm-1">
+                <p class="form-control-static error" ng-show="myForm.title.$error.maxlength">Too long!</p>
+
+              </div>
+            </div>
+
+            <div class="form-group" ng-class="{'has-error': myForm.subtitle.$error.maxlength}">
+              <label class="col-sm-3 control-label">Subtitle</label>
+              <div class="col-sm-8">
+                <div class="input-group">
+                  <input ng-trim="false" ng-disabled="true" type="text" class="form-control" name="subtitle" ng-model="item.subtitle" ng-maxlength="55" />
+                  <span class="input-group-addon">{{ 55  - myForm.subtitle.$viewValue.length}}</span>
+
+                </div>
+              </div>
+              <div class="col-sm-1">
+                <p class="form-control-static error" ng-show="myForm.subtitle.$error.maxlength">Too long!</p>
+
+              </div>
+            </div>
+
+
+
+            <div class="form-group" ng-class="{'has-error': myForm.UPC.$error.maxlength}">
+              <label class="col-sm-3 control-label">UPC</label>
+              <div class="col-sm-3">
+                <div class="input-group">
+                  <input ng-trim="false" required type="text" class="form-control" name="UPC" ng-model="item.UPC" ng-maxlength="12" />
+                  <span class="input-group-addon">{{ 12  - myForm.UPC.$viewValue.length}}</span>
+
+                </div>
+              </div>
+              <div class="col-sm-1">
+                <p class="form-control-static error" ng-show="myForm.UPC.$error.maxlength">Too long!</p>
+
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Condition</label>
+              <div class="col-sm-2">
+                <div class="input-group">
+                  <div class="btn-group">
+                    <label class="btn btn-default" ng-model="conditionModel" btn-radio="'New'">New</label>
+                    <label class="btn btn-default" ng-model="conditionModel" btn-radio="'Used'">Used</label>
+
+                  </div>
+
+                </div>
+              </div>
+              <div class="col-sm-5">
+                <div class="input-group">
+                  <p class="form-control-static">Lists a <i>{{conditionModel | lowercase}}</i> item</p>
+                </div>
+              </div>
 
             </div>
-            <!-- end .col-md-8 -->
+
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Cost</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="cost" name="cost" placeholder="Cost">
+              </div>
+            </div>
 
 
 
+            <hr />
+
+            <div class="form-group">
+              <div class="col-sm-5">
+                <h4>Pricing Information</h4>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Listing Type</label>
+              <div class="col-sm-3">
+                <div class="input-group">
+                  <div class="btn-group">
+                    <label class="btn btn-default" ng-model="listingTypeModel" btn-radio="'fixed'">Fixed Price</label>
+                    <label class="btn btn-default" ng-model="listingTypeModel" btn-radio="'auction'">Auction</label>
+
+                  </div>
+
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="input-group">
+                  <p class="form-control-static"><i>{{listingTypeModel }}</i> style listing</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Listing Duration</label>
+              <div class="col-sm-9">
+                <div class="input-group">
+                  <div class="btn-group">
+                    <label class="btn btn-default" ng-model="listingDurationModel" btn-radio="'Days_1'">1 Days</label>
+                    <label class="btn btn-default" ng-model="listingDurationModel" btn-radio="'Days_3'">3 Days</label>
+                    <label class="btn btn-default" ng-model="listingDurationModel" btn-radio="'Days_5'">5 Days</label>
+                    <label class="btn btn-default" ng-model="listingDurationModel" btn-radio="'Days_7'">7 Days</label>
+                    <label class="btn btn-default" ng-model="listingDurationModel" btn-radio="'Days_10'">10 Days</label>
+                    <label class="btn btn-default" ng-model="listingDurationModel" btn-radio="'Days_30'">30 Days</label>
+                    <label class="btn btn-default" ng-model="listingDurationModel" btn-radio="'GTC'">GTC</label>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Cost</label>
+              <div class="col-sm-3">
+                <input type="text" class="form-control" id="totalCount" name="totalCount" placeholder="Cost">
+              </div>
+            </div>
+
+
+            <hr />
+
+            <div class="form-group">
+              <div class="col-sm-5">
+                <h4>Shipping Information</h4>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Weight (Oz)</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="weight" name="weight" placeholder="Weight (Oz)">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Cost</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="yardagePrint" name="yardagePrint" placeholder="Cost">
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Color (Third Word)</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="yardageColor" name="yardageColor" placeholder="Cost">
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Color Family</label>
+              <div class="col-sm-9">
+                <select class="form-control" name="colorFamilyId">
+                  <option>Select a Color Family</option>
+
+
+
+                  <option value="Cost">Cost</option>
+
+
+
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Shipping</label>
+              <div class="col-sm-9">
+                <select class="form-control" name="fabricPatternId">
+                  <option>Select a shipping group</option>
+
+
+
+                  <option value="Cost">Cost</option>
+
+
+
+                </select>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <div class="col-sm-12">
+                <button type="submit" class="btn btn-default pull-right">Update</button>
+              </div>
+            </div>
+
+          </div>
         </div>
-        <!-- end .row -->
 
-    </form>
+      </div>
+      <!-- end .col-md-8 -->
+
+
+
+    </div>
+    <!-- end .row -->
+
+  </div>
 </div>
 <!-- end .container -->
 
 <div class="col-md-12">
-    <div class="container">
+  <div class="container">
 
-        <div class="row">
+    <div class="row">
 
-            <div class="col-md-6">
+      <div class="col-md-3">
 
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Category</h3>
-                    </div>
-                    <div class="panel-body">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Weight</h3>
+          </div>
+          <div class="panel-body">
 
-                        <div class="filter">
-                            <form class="form" role="form">
-                                <div class="form-group">
-                                    <label for="designerFilterText" class="control-label">Filter Manufacturers</label>
-                                    <input type="text" class="form-control" id="designerFilterText" placeholder="Type to filter designers">
-                                </div>
-                            </form>
-                        </div>
+            <form class="form" role="form" method="post" action="">
+              <div class="form-group">
+                <label class="control-label">Pounds</label>
+                <input type="number" class="form-control" ng-model="item.weightMajor" value="0">
+                </input>
+              </div>
 
-                        <table class="table table-striped" id="designerList">
-                            <thead>
-                                <tr>
-                                    <th>Manufacturer Name</th>
-                                    <th>Manufacturer City</th>
+              <div class="form-group">
+                <label class="control-label">Ounces</label>
+                <input type="number" class="form-control" ng-model="item.weightMinor" ng-min="0" ng-max="15">
+                </input>
+              </div>
+              <label class="checkboxCategory">Manufacturer</label>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="27" name="yardage"> Basic Manufacturer
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="40" name="yardage"> Regular Manufacturer
+                </label>
+              </div>
 
-                                </tr>
-                            </thead>
+              <button type="submit" class="btn btn-default">Create</button>
+            </form>
 
-                            <tbody>
-
-
-                                <tr>
-                                    <td>
-                                        <a href="">ss</a>
-                                    </td>
-                                    <td></td>
-
-
-
-                                    <td></td>
-
-
-                                </tr>
-
-
-                            </tbody>
-
-                        </table>
-
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-md-6">
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Other</h3>
-                    </div>
-                    <div class="panel-body">
-
-                        <form class="form" role="form" method="post" action="">
-                            <div class="form-group">
-                                <label for="designerName" class="control-label">Manufacturer Name</label>
-                                <input type="text" class="form-control" id="designerName" name="designerName" placeholder="Name">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="designerManufacturer" class="control-label">Manufacturer</label>
-                                <select class="form-control" name="manId">
-                                    <option value="">Select a Manufacturer</option>
-
-
-
-                                    <option value=""></option>
-
-
-                                </select>
-                            </div>
-                            <label class="checkboxCategory">Manufacturer</label>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" value="27" name="yardage"> Basic Manufacturer
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" value="40" name="yardage"> Regular Manufacturer
-                                </label>
-                            </div>
-
-                            <button type="submit" class="btn btn-default">Create</button>
-                        </form>
-
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="col-md-6">
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Returns</h3>
-                    </div>
-                    <div class="panel-body">
-
-                        <form class="form" role="form" method="post" action="">
-                            <div class="form-group">
-                                <label for="designerDeleteName" class="control-label">Returns Name</label>
-                                <select class="form-control" id="designerDeleteName" name="designerId">
-                                    <option value="">Select a Return Group</option>
-
-
-                                    <option value=""></option>
-
-
-                                </select>
-                            </div>
-
-                            <button type="submit" class="btn btn-default">Returns</button>
-                        </form>
-
-                    </div>
-                </div>
-
-            </div>
-
-
-
+          </div>
         </div>
 
+      </div>
+
+      <div class="col-md-6">
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Other</h3>
+          </div>
+          <div class="panel-body">
+
+            <form class="form" role="form" method="post" action="">
+              <div class="form-group">
+                <label for="designerName" class="control-label">Manufacturer Name</label>
+                <input type="text" class="form-control" id="designerName" name="designerName" placeholder="Name">
+              </div>
+
+              <div class="form-group">
+                <label for="designerManufacturer" class="control-label">Manufacturer</label>
+                <select class="form-control" name="manId">
+                  <option value="">Select a Manufacturer</option>
+
+
+
+                  <option value=""></option>
+
+
+                </select>
+              </div>
+              <label class="checkboxCategory">Manufacturer</label>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="27" name="yardage"> Basic Manufacturer
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="40" name="yardage"> Regular Manufacturer
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-default">Create</button>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="col-md-3">
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Returns</h3>
+          </div>
+          <div class="panel-body">
+
+            <form class="form" role="form" method="post" action="">
+              <div class="form-group">
+                <label for="designerDeleteName" class="control-label">Returns Name</label>
+                <select class="form-control" id="designerDeleteName" name="designerId">
+                  <option value="">Select a Return Group</option>
+
+
+                  <option value=""></option>
+
+
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-default">Returns</button>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+
+
+
     </div>
+
+  </div>
 </div>

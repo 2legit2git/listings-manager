@@ -5,8 +5,8 @@ angular.module('listingManagerApp')
         // return $resource('/api/listings/:id/:controller', {
         // 
         return {
-            EbayListings: $resource('http://mydomain.com/siliconehose/functions/resourceJson.php', {
-                //return $resource('http://mydomain.com/siliconehose/functions/jsonTest.php?itemID=', {
+            EbayListings: $resource('http://nxs.us.to/siliconehose/functions/resourceJson.php', {
+                //return $resource('http://nxs.us.to/siliconehose/functions/jsonTest.php?itemID=', {
                 itemID: '@itemID'
             }, {
                 getArray: {

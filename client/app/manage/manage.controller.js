@@ -204,6 +204,7 @@ angular.module('listingManagerApp')
             multiSelect: false,
             selectedItems: $scope.mySelections,
             showFooter: true,
+            showGroupPanel: false,
             sortInfo: $scope.sortOptions,
             totalServerItems: "totalServerItems",
             useExternalSorting: false,
