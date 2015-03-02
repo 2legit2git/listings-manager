@@ -178,6 +178,9 @@ angular.module('listingManagerApp')
                 field: "quantityAvailable",
                 displayName: "quantityAvailable"
             }, {
+                field: "globalShipping",
+                displayName: "globalShipping"
+            }, {
                 field: "quantity",
                 displayName: "quantity"
             }, {
