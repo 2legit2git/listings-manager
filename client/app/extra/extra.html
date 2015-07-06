@@ -1,5 +1,12 @@
 <navbar/>
 
+hey {{name}}
 <div class="container">
-This is the extra view.
+This is the extra view, yo.
+</div>
+
+{{user.name}}
+
+<div class="container" ng-repeat="name in names">
+This is the extra view. {{name.name}}
 </div>
